@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myclaim
+  namespace: default
+  uid: 02d4aa83-83cd-11e8-909d-42010af00004
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 14Gi
+  storageClassName: standard
+  volumeName: pvc-xxx
+status:
+  capacity:
+    storage: 9G
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: 2018-07-11T14:51:10Z
+    message: Waiting for user to (re-)start a pod to finish file system resize of
+      volume on node.
+    status: "True"
+    type: FileSystemResizePending
+  phase: Bound
